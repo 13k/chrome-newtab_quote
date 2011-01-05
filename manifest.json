@@ -1,7 +1,10 @@
 {
-  "name": "dekatrion chrome start page",
+  "name": "NewTab Quote",
   "version": "1.0",
-  "description": "Shows a custom start page",
+  "description": "Overrides the default newtab page with a simple stylized quote page",
+  "icons": {
+    "128": "newtab_quote.png"
+  },
 
   "background_page": "background.html",
 
