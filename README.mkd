@@ -1,0 +1,3 @@
+== Chrome NewTab Quote
+
+A simple "New Tab" page that shows a (configurable) quote.

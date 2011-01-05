@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>dekatrion start page options</title>
+
+    <style type="text/css">
+      #notice {
+        width: 400px;
+        text-align: center;
+        color: #000;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        text-shadow: #ddd 1px 1px 0px;
+        border: 1px dashed #000;
+        background-color: #ecdaef;
+        margin: 1em;
+        padding: 0.25em;
+        display: none;
+      }
+    </style>
+
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="options.js"></script>
+
+    <script type="text/javascript">
+      function say(msg) {
+        notification("#notice", msg);
+      }
+
+      $(function() {
+        restoreForm("#settings");
+
+        $("#submit").click(function(ev) {
+          ev.preventDefault();
+          saveForm("#settings");
+          say("Settings saved");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="notice"></div>
+    <form id="settings">
+      <label for="text">Text to display</label><br/>
+      <textarea name="text"></textarea><br/>
+      <input type="submit" id="submit" value="save"/>
+    </form>
+  </body>
+</html>

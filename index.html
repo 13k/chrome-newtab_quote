@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Google Chrome</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript">
+      function setText() {
+        chrome.extension.sendRequest({type: "getText"}, function(response) {
+          document.getElementById('text').innerHTML = response;
+        });
+      }
+    </script>
+  </head>
+  <body onload="setText()">
+	<div id="container">
+    <p id="text"></p>
+	</div>
+  </body>
+</html>

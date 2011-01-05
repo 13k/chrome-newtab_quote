@@ -1,0 +1,13 @@
+{
+  "name": "dekatrion chrome start page",
+  "version": "1.0",
+  "description": "Shows a custom start page",
+
+  "background_page": "background.html",
+
+  "options_page": "options.html",
+
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  }
+}

@@ -1,0 +1,21 @@
+body {
+  background: #fff url('background.png');
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+}
+
+#text {
+  margin: 0 25px;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100px;
+  letter-spacing: -10px;
+  text-transform: lowercase;
+  text-shadow: #bbb 3px 2px 2px;
+}
