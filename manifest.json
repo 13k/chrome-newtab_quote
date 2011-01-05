@@ -1,6 +1,6 @@
 {
   "name": "NewTab Quote",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Overrides the default newtab page with a simple stylized quote page",
   "icons": {
     "128": "newtab_quote.png"
