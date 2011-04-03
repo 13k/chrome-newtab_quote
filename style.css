@@ -13,9 +13,7 @@ body {
 #text {
   margin: 0 25px;
   padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 100px;
-  letter-spacing: -10px;
-  text-transform: lowercase;
+  font-family: 'LaconicBold', sans-serif;
+  font-size: 72px;
   text-shadow: #bbb 3px 2px 2px;
 }
