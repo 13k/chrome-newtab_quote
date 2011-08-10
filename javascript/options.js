@@ -1,6 +1,15 @@
+function normalizeSerializedArray(ary) {
+  var obj = {};
+  $.each(ary, function(i, e) {
+    obj[e.name] = e.value;
+  });
+  return obj;
+}
+
 function saveForm(form_sel) {
-  var settings = JSON.stringify($(form_sel).serializeArray());
-  localStorage["settings"] = settings;
+  var settings = normalizeSerializedArray($(form_sel).serializeArray());
+  console.log("saving", settings);
+  localStorage["settings"] = JSON.stringify(settings);
 }
 
 function restoreForm(form_sel) {
@@ -13,8 +22,8 @@ function restoreForm(form_sel) {
   var settings = JSON.parse(raw_settings);
   var form = $(form_sel);
 
-  $.each(settings, function(i, setting) {
-    form.find("[name='" + setting.name + "']").val(setting.value);
+  $.each(settings, function(name, value) {
+    form.find("[name='" + name + "']").val(value);
   });
 }
 

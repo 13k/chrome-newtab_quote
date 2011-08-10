@@ -1,18 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/1999/xhtml">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <title>Google Chrome</title>
-    <link rel="stylesheet" type="text/css" href="fonts/laconic/font.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/laconic/stylesheet.css"/>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    
+    <script type="text/javascript" src="javascript/jquery-1.6.2.min.js"></script>
+    
     <script type="text/javascript">
-      function setText() {
-        chrome.extension.sendRequest({type: "getText"}, function(response) {
-          document.getElementById('text').innerHTML = response;
+      $(function() {
+        chrome.extension.sendRequest({type: "getOptions"}, function(response) {
+          var settings = response, val;
+          var target = $('#text');
+          var css_options = {
+            size: 'font-size',
+            font: 'font-family'
+          };
+          
+          $.each(css_options, function(opt, attr) {
+            if (val = settings[opt]) {
+              target.css(attr, val);
+            }
+          });
+          
+          target.text(settings.quote);
         });
-      }
+      });
     </script>
   </head>
-  <body onload="setText()">
+  <body>
 	<div id="container">
     <p id="text"></p>
 	</div>

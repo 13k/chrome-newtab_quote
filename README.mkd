@@ -1,3 +1,3 @@
-## Chrome NewTab Quote
+# NewTab Quote (Google Chrome extension)
 
 A simple "New Tab" page that shows a (configurable) quote.
